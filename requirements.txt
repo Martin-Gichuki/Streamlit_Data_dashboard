@@ -1,0 +1,9 @@
+streamlit
+datasets
+pandas
+plotly
+prophet
+openpyxl
+xlrd
+
+

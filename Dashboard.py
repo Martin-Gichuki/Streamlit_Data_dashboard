@@ -9,7 +9,7 @@ import plotly.figure_factory as ff
 from prophet import Prophet
 from prophet.plot import plot_plotly
 import plotly.graph_objects as go
-
+from datasets import load_dataset
 
 warnings.filterwarnings("ignore")
 
@@ -46,9 +46,9 @@ if f1 is not None:
     else:
         df = pd.read_excel(f1)
 else:
-    os.chdir(r"C:\Users\Admin\Desktop\projects\Stremlit_dash")
-    df = pd.read_excel("Superstore.xls")
-
+    dataset = load_dataset("1gichukimba/superstores", split="train")
+    df = pd.DataFrame(dataset)
+    st.info("Using default dataset from Hugging Face 🌐")
 # Data Preview
 st.markdown("""
 **🧾 Data Snapshot:**  
