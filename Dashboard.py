@@ -46,7 +46,7 @@ if f1 is not None:
     else:
         df = pd.read_excel(f1)
 else:
-    dataset = load_dataset("1gichukimba/superstores", split="train")
+    dataset = load_dataset("1gichukimba/superstores", data_files="superstore.csv", split="train")
     df = pd.DataFrame(dataset)
     st.info("Using default dataset from Hugging Face 🌐")
 # Data Preview
